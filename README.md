@@ -1,4 +1,4 @@
-# What Is Clean Code?
+# Chapter 01 - What Is Clean Code?
 
 Robert C. Martin states:
 
@@ -44,7 +44,7 @@ Clean code always looks like it was written by someone who cares. There is nothi
 - Every module is made for one and only one purpose.
 ---
 
-# Meaningful Names
+# Chapter 02 - Meaningful Names
 Name of the classes, methods and variables must have some characteristics to make it easier to understand the code. In this chapter we will learn a few of them.
 
 1. **The name should be intension-revealing.**
@@ -122,7 +122,7 @@ Some prefixes or postfixes only add more complexity. Imagine adding per at the b
 - The more the distance of a variable’s declaration and usage, the longer its name.
 - The more publica method, the more general its task and the shorter its name.
 ---
-# Methods
+# Chapter 03 - Methods
 Methods play an important role in code; they define a class's behavior. You might have encountered methods
 - with more than 100 lines
 - managing multiple of tasks
@@ -419,7 +419,7 @@ If try-catch is required, it should be isolated as the implementation of a metho
     }
 ```
 ---
-# Comments
+# Chapter 04 - Comments
 ### Are comments really that bad?
 - Comments are often unrecognized components of code that can confuse readers and lead to misunderstanding.
 - Comments are used to cover for bad code, instead of fixing it.
@@ -556,7 +556,7 @@ It’s one of the dirtiest codes to write. A commented code confuses the reader.
 - Is this code going to be used later? If so, why is there no TODO comments around it?
 - What happens if I delete this code?
 ---
-# Objects And Data Structures
+# Chapter 05 - Objects And Data Structures
 True abstraction hides data types and applies operations on them as public methods. 
 
 ```
@@ -862,7 +862,7 @@ Data structures are defined as classes with private variables and no methods. Th
 ## In brief we could say:
 When we refer to data structures, we mean anemic classes with only getters and setters. These classes store and move data, and are also recognized as DTOs. On the other side, domain classes execute business logic and lack setter methods. We can only access their data without changing it.
 ---
-# Boundaries
+# Chapter 06 - Boundaries
 Third Party Code is a code that we use, but did not write. Like calling an API. This could lead to multiple issues:
 1. We must learn to work with the API.
       - **Solution - Learning Tests:** When dealing with third-party code, it's important to understand it. However, this can be a challenging task. There are a few ways to go about it.
@@ -884,7 +884,7 @@ Third Party Code is a code that we use, but did not write. Like calling an API. 
 - **Enhanced Testing:** While we can't directly test the API itself, we can test the wrapper class effectively.
 - **Forward Planning:** Imagine a scenario where the API isn't available yet. We could create other modules of our program, test and use them without problems. This is because our dependency on the API is limited to just one class. This grants us and the API development team more flexibility and time for development.
 ---
-# Unit Tests
+# Chapter 07 - Unit Tests
 ### *Test Driven Development*: It's really important to write effective unit tests to ensure code quality, reliability, and maintainability. They provide us early detection of bugs during development. It's also so important to keep test code as clean as production code. Clean tests satisfy the need for documentation, as they describe the logical flow of a class or even the entire software.
 
 ## The Three Laws of TDD
@@ -924,7 +924,7 @@ Here we consider some points about TDD.
     - Self-Validating: Test should have a boolean output.
     - Timely: Test should be written before production code, not after it.
 ---
-# Class Organization
+# Chapter 08 - Class Organization
 Each language has its own standard structure for the classes. In Java (and similar languages), we write a class in this order:
 1. Public static final variables
 2. Public static variables
@@ -982,7 +982,7 @@ Adapter design pattern.
 - Some of these small methods interact with some objects from a specific class. They should be moved to that class.
 - It is very usual to add new features or fix bugs in a software. The legacy code has to change. It comes with a risk. The change on one module would disrupt the functionality of others. To avoid it, we use interfaces or abstract classes, and place the new codes inside a new class that extends the parent class or interface.
 ---
-# Systems
+# Chapter 09 - Systems
 A software system is composed of distinct sub-systems and layers, each handling specific tasks. Crucially, these sub-systems must be isolated from one another. The client method constructs the required objects for the system and hands them over to the application layer, which utilizes them.
 
 ## Dependency Injection and Inversion of Control (IoC)
