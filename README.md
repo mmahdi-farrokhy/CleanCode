@@ -218,11 +218,11 @@ In many situations we check the value of an object in a switch statement and dec
     public Shape createShape(ShapeType shapeType) {
         switch(shapeType)
         {
-            case "chapter06.Rectangle":
+            case ShapeType.Rectangle:
                 return side * side;
-            case "chapter06.Circle":
+            case ShapeType.Circle:
                 return 3.14 * radius * radius;
-            case "Triangle":
+            case ShapeType.Triangle:
                 return (base * height) / 2;
         }
     }
@@ -266,11 +266,11 @@ In many situations we check the value of an object in a switch statement and dec
 
     public Shape createShape(ShapeType shapeType) {
         switch (shapeType) {
-            case "Rectangle":
+            case ShapeType.Rectangle:
                 return new Rectangle();
-            case "Circle":
+            case ShapeType.Circle:
                 return new Circle();
-            case "Triangle":
+            case ShapeType.Triangle:
                 return new Triangle();
         }
     }
@@ -1088,7 +1088,7 @@ If agility is compromised, productivity will suffer and the benefits of TDD will
 
 ---
 
-# Clarity
+# Chapter 10 - Clarity
 An important point for having clean code is to have clarity in the design. Based on Beck’s opinion, design is simple if it,
 1. passes all tests.
 2. has no duplication.
@@ -1111,19 +1111,19 @@ Duplication means additional effort, additional risk and unnecessary complexity.
     // BAD CODE
     public void client() {
         JButton button1 = new JButton("1");
-        button1.setBounds( 0 , 0 , 50 , 60 );
-        button1.setBackground(Color. _white_ );
-        button1.setBorder((BorderFactory. _createLineBorder_ (Color. _white_ )));
+        button1.setBounds(0, 0, 50, 60);
+        button1.setBackground(Color.white);
+        button1.setBorder((BorderFactory.createLineBorder(Color.white)));
 
         JButton button2 = new JButton("2");
-        button2.setBounds( 100 , 100 , 50 , 60 );
-        button2.setBackground(Color. white );
-        button2.setBorder((BorderFactory. createLineBorder (Color. white )));
+        button2.setBounds(100, 100, 50, 60);
+        button2.setBackground(Color.white);
+        button2.setBorder((BorderFactory.createLineBorder(Color.white)));
 
         JButton button3 = new JButton("3");
-        button3.setBounds( 200 , 200 , 50 , 60 );
-        button3.setBackground(Color. _white_ );
-        button3.setBorder((BorderFactory. _createLineBorder_ (Color. _white_ )));
+        button3.setBounds(200, 200, 50, 60);
+        button3.setBackground(Color.white);
+        button3.setBorder((BorderFactory.createLineBorder(Color.white)));
     }
 ```
 
@@ -1150,7 +1150,7 @@ Duplication means additional effort, additional risk and unnecessary complexity.
 ```
 
 ## Expressive
-The major cost of a software project is attributed to its long-term maintenance. To minimize the cost and potential modifications issues, we have to understand system’s behavior and functionality. The code should clearly reflect the author's intentions. A well-written code can be easily understood, leadihng to significant reductioin of onboarding time and maintenance cost.
+The major cost of a software project is attributed to its long-term maintenance. To minimize the cost and potential modifications issues, we have to understand system’s behavior and functionality. The code should clearly reflect the author's intentions. A well-written code can be easily understood, leading to significant reduction of onboarding time and maintenance cost.
 
 ## Minimal Classes And Methods
 The goal is to keep the system compact at its highest level. So we need minimum number of small classes and methods.
